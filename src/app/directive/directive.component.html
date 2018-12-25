@@ -1,0 +1,51 @@
+<h2>Directive attributes</h2>
+<ul class="list-circle">
+
+  <!-- Built-in  -->
+  <li [ngStyle]="{ 'color': '#ff1111', 'font-weight': 'bold' }">[ngStyle]</li>
+
+  <li [ngClass]="{ 'first': true, 'second': true, 'third': false }">[ngClass]</li>
+
+  <!-- Custom -->
+  <li [appHighLight]="'blue'">[appHighLight]</li>
+
+
+</ul>
+
+<!-- <ul class="list-circle">
+  <li>
+    <button class="btn" appBtnLoad [load]="btnLoad" (click)="submit()">Loop add event</button>
+  </li>
+  <li>
+    <button class="btn" appBtnLoad [load]="btnLoad" (click)="submit()">Loop add event</button>
+  </li>
+</ul> -->
+
+<h2>Directive structural</h2>
+<!-- <ul class="list-circle"> -->
+
+  <!-- Built-in  -->
+  <!-- <li [ngStyle]="{ 'color': '#ff1111', 'font-weight': 'bold' }">[ngStyle]</li>
+
+  <li [ngClass]="{ 'first': true, 'second': true, 'third': false }">[ngClass]</li> -->
+
+  <!-- Custom -->
+  <!-- <li *appUnless="false">
+    <span>appUnless</span>
+    <span>appUnless</span>
+  </li> -->
+<!-- </ul> -->
+<ul class="list-circle">
+  <li>
+    *ngFor : use trackBy for ng-for tracking element and improve perfomance
+    <div class="wrap-badge">
+      <button class="btn btn-primary" (click)="addNew()">Add new</button>
+      <button class="btn btn-primary" (click)="remove()">remove</button>
+      <div class="badges">
+        <span class="badge" *ngFor="let badge of badges; trackBy: trackByFn">
+          {{badge.name}}
+        </span>
+      </div>
+    </div>
+  </li>
+</ul>

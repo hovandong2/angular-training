@@ -1,0 +1,54 @@
+<form [formGroup]="formReactive" (ngSubmit)="submit()">
+  <div class="row">
+    <div class="col-md-6">
+      <label>First Name</label>
+      <input class="form-control" type="text" formControlName="firstName">
+      <div *ngIf="formReactive.controls.firstName.invalid 
+        && (formReactive.controls.firstName.dirty || formReactive.controls.firstName.touched)">
+        <span *ngIf="formReactive.get('firstName').errors.required">This field is required</span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label>Last Name</label>
+      <input class="form-control" type="text" formControlName="lastName">
+      <div *ngIf="formReactive.controls.lastName.invalid 
+        && (formReactive.controls.lastName.dirty || formReactive.controls.lastName.touched)">
+        <span *ngIf="formReactive.controls.lastName.errors.required">This field is required</span>
+        <span *ngIf="formReactive.get('lastName').hasError('maxlength')">Please enter no more than 10 charactors</span>
+      </div>
+    </div>
+  </div>
+  <label>Email</label>
+  <input class="form-control" type="text" formControlName="email">
+  <div *ngIf="formReactive.controls.email.invalid 
+      && (formReactive.controls.email.dirty || formReactive.controls.email.touched)">
+    <span *ngIf="formReactive.controls.email.errors.email">Email incorrect</span>
+  </div>
+  <label>Address</label>
+  <div formGroupName="address" class="row">
+    <div class="col-md-4">
+      <input class="form-control" type="text" placeholder="City" formControlName="city">
+    </div>
+    <div class="col-md-4">
+      <input class="form-control" type="text" placeholder="Street" formControlName="street">
+    </div>
+    <div class="col-md-4">
+      <input class="form-control" type="text" placeholder="Street number" formControlName="streetNumber">
+    </div>
+  </div>
+  <label>Password</label>
+  <input class="form-control" type="password" formControlName="password">
+  <label>Password Confirm</label>
+  <input class="form-control" type="password" formControlName="confirmPassword">
+  <div formArrayName="aliases">
+    <label>Aliases</label> <button type="button" (click)="addAlias()" class="btn btn-small">Add Alias +</button>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let address of aliases.controls; let i=index">
+        <input class="form-control" type="text" [formControlName]="i">
+      </div>
+    </div>
+  </div>
+  <button class="btn" [disabled]="formReactive.invalid">Submit</button>
+</form>
+<p><strong>Form value:</strong> {{formReactive.value | json}}</p>
+<p><strong>Form status validate:</strong> {{formReactive.valid}}</p>

@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1, h2, h3, h4 , h5, h6 {
+  margin-bottom: 15px;
+}
+a {
+  &.active {
+    color: rgb(214, 45, 45);
+  }
+}
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+.p-t-15 {
+  padding-top: 15px;
+}
+.p-b-15 {
+  padding-bottom: 15px;
+}
+.m-t-15 {
+  margin-top: 15px;
+}
+.m-b-15 {
+  margin-bottom: 15px;
+}
+.txt-center {
+  text-align: center;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #000;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  margin-bottom: 15px;
+  &:hover {
+    background: #333;
+  }
+  + .btn {
+    margin-left: 15px;
+  }
+  &.active {
+    background: rgb(214, 45, 45);
+    color: #fff;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+.btn-small {
+  padding: 5px 15px;
+  font-size: 13px;
+}
+label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+}
+input {
+  height: 36px;
+  border: 1px solid #e1e1e1;
+  padding: 0 15px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.card {
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  min-width: 300px;
+  &__header,
+  &__footer {
+    background: #ddd;
+    padding: 15px;
+  }
+  &__content {
+    padding: 20px 15px;
+  }
+}
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+header {
+  background: #333;
+  li {
+    display: inline-block;
+    margin-right: 30px;
+    a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 20px 0;
+      display: block;
+    }
+  }
+}
+main {
+  padding: 30px 0;
+}
+.tab-list {
+  li {
+    display: inline-block;
+  }
+}
+.tab-content {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.list-circle {
+  li {
+    padding-left: 22px;
+    margin-bottom: 30px;
+    position: relative;
+    &::before {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      left: 0;
+      top: 3px;
+      content: "";
+      background: #000;
+      border-radius: 50%;
+    }
+  }
+}
+.row {
+  margin: 0 -15px;
+  &::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+.col-md-6 {
+  width: 50%;
+  padding: 0 15px;
+  float: left;
+}
+.col-md-4 {
+  width: 33.3333333%;
+  padding: 0 15px;
+  float: left;
+}

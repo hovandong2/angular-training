@@ -1,0 +1,24 @@
+<a routerLink="/news/2" [queryParams]="{debug: true}" class="btn">News detail</a>
+<a routerLink="/news/12" [queryParams]="{debug: false}" class="btn">News detail</a>
+<ul>
+  <li *ngFor="let product of productList" (click)="showDetail(product)">
+    <p>{{product.title}}</p>
+    <p>{{product.desc}}</p>
+  </li>
+</ul>
+<input type="text" name="sendValue" id="" [(ngModel)]="sendValue" #inout>
+<p>{{inout.value}}</p>
+<app-detail [hero]="input" [getValue]="sendValue" (log)="listenChild($event)"></app-detail>
+
+<ul>
+  <li #li>sdad</li>
+  <li #li>aaaaaa</li>
+</ul>
+
+<div #getelm>Ho van DOng</div>
+
+<ul>
+  <li *ngFor="let it of item" class="col-md-4">
+    <app-news-item [data]="it"></app-news-item>
+  </li>
+</ul>

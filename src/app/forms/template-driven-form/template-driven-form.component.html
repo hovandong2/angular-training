@@ -1,0 +1,37 @@
+<form #elmForm="ngForm" (ngSubmit)="submit(elmForm)">
+  <label for="">Username</label>
+  <input type="text" name="user" [(ngModel)]="user" #userName="ngModel" (ngModelChange)="alo(elmForm)" required  class="form-control" minlength="10">
+  <div *ngIf="userName.invalid && (userName.dirty || userName.touched)"
+    class="alert alert-danger">
+    <p *ngIf="userName.errors.required">
+      Name is required.
+    </p>
+    <p *ngIf="userName.errors.minlength">
+      Name must be at least 10 characters long.
+    </p>
+  </div>
+  <label for="">Password</label>
+  <input type="password" name="password" [(ngModel)]="password" #pass="ngModel" class="form-control" required>
+  <!-- <div ngModelGroup="social">
+    <input class="form-control" type="text" #facebook="ngModel" ngModel name="facebook">
+    <input class="form-control" type="text" #twitter="ngModel" ngModel name="twitter">
+  </div> -->
+  <button class="btn" [disabled]="elmForm.invalid">Submit</button>
+</form>
+<br>
+<br>
+{{elmForm.valid}}
+<h4><strong>Username behavior</strong></h4>
+<strong>touched</strong>: {{userName.touched}}
+<br>
+<strong>dirty</strong>: {{userName.dirty}}
+<br>
+<strong>valid</strong>: {{userName.valid}}
+<br>
+<br>
+<h4><strong>Password behavior</strong></h4>
+<strong>touched</strong>: {{pass.touched}}
+<br>
+<strong>dirty</strong>: {{pass.dirty}}<br>
+<strong>valid</strong>: {{pass.valid}}
+

@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -38,6 +38,23 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.staging.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": true,
               "extractCss": true,
               "namedChunks": false,
               "aot": true,
@@ -123,5 +140,10 @@
       }
     }
   },
-  "defaultProject": "angular-training"
+  "defaultProject": "angular-training",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

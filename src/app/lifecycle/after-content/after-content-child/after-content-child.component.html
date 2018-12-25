@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card__header">
+    <h2 [appHighLight]="color">Card header</h2>
+  </div>
+  <div class="card__content">
+    <ng-content></ng-content>
+
+    <button class="btn" (click)="toggle()">Swhich content</button>
+    <ul>
+      <li *appUnless="toogleContent">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+      <li *appUnless="!toogleContent">Quos corporis repellat, porro tempore mollitia atque exercitationem similique sapiente ab.</li>
+    </ul>
+  </div>
+  <div class="card__footer">
+    <h2>Card footer</h2>
+  </div>
+</div>

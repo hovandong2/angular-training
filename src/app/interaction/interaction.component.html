@@ -1,0 +1,16 @@
+<ul class="tab-list">
+  <li>
+    <button class="btn" [class.active]="contentId === 1" (click)="showContent(1)">Tab 1</button>
+  </li>
+  <li>
+    <button class="btn" [class.active]="contentId === 2" (click)="showContent(2)">Tab 2</button>
+  </li>
+  <li>
+    <button class="btn" [class.active]="contentId === 3" (click)="showContent(3)">Tab 3</button>
+  </li>
+  <li>
+    <button class="btn" [class.active]="contentId === 4" (click)="showContent(4)">Tab 4</button>
+  </li>
+</ul>
+<app-interaction-child [id]="contentId" (go)="getIdFromChild($event)"></app-interaction-child>
+<app-interaction-other-child></app-interaction-other-child>
